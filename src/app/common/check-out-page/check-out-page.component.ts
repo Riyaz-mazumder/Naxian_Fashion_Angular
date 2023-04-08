@@ -33,10 +33,8 @@ export class CheckOutPageComponent implements OnInit {
   }
 
   submit(data: NgForm) {
-    console.log(JSON.parse(this.theUser.id));
-
-    data.value.theOrder = this.oneData;
-    data.value.theUser = this.theUserId.id;
+    data.value.theOrders = this.oneData;
+    data.value.customers = this.authService.getUser();
     console.log(data.value);
 
     this.service.addOrder(data.value).subscribe({

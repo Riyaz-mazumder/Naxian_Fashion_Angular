@@ -68,6 +68,9 @@ export class DatabaseServiceService {
   getAllUnApprovedOrders() {
     return this.http.get(this.oUrl + '/unApproved');
   }
+  getAllApprovedOrders() {
+    return this.http.get(this.oUrl + '/approved');
+  }
   getTheOrder(id: any) {
     return this.http.get(this.oUrl + '/' + id);
   }

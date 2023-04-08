@@ -51,40 +51,7 @@ export class HomePageComponent implements OnInit {
       alert('Login Or Create an Account First');
       this.router.navigate(['/login']);
     } else {
-      // console.log(JSON.parse(this.loggedIn).id);
-
-      // this.service.getTheUser(JSON.parse(this.loggedIn).id).subscribe({
-      //   next: (r) => {
-      //     console.log(r + 'rrrrr-------');
-
-      //     this.theUser = r;
-      //   },
-      //   error: (err) => {
-      //     console.log(err);
-      //   },
-      // });
-      // console.log(this.theUser);
-
       if (f === 'formWishList') {
-        // let data;
-        // this.http
-        //   .get(
-        //     `http://localhost:3000/userRegistration/${
-        //       JSON.parse(this.loggedIn).id
-        //     }`
-        //   )
-        //   .pipe(
-        //     catchError((err) => {
-        //       console.error(err);
-        //       return throwError(err);
-        //     })
-        //   )
-        //   .subscribe((user: any) => {
-        //     const wishList = user.wishList || [];
-        //     data = [...wishList, ...obj];
-        //   });
-        // console.log(data);
-
         this.http
           .patch(
             `http://localhost:3000/userRegistration/${
@@ -93,84 +60,17 @@ export class HomePageComponent implements OnInit {
             { wishList: obj }
           )
           .subscribe((data) => console.log(data));
-        // const data = {
-        //   name: this.theUser.name,
-        //   email: this.theUser.email,
-        //   gender: this.theUser.gender,
-        //   dob: this.theUser.dob,
-        //   password: this.theUser.password,
-        //   card: this.theUser.card,
-        //   wishList: this.theUser.wishList + obj,
-        //   id: this.theUser.id,
-        // };
-        // console.log(obj);
-        // console.log(data);
-
-        // this.service.editUser(this.theUser.id, data).subscribe({
-        //   next: (r) => {
-        //     console.log(r);
-        //   },
-        //   error: (e) => {
-        //     alert(e);
-        //   },
-        // });
       } else if (f === 'formCard') {
-        // this.http
-        //   .get(
-        //     `http://localhost:3000/userRegistration/${
-        //       JSON.parse(this.loggedIn).id
-        //     }`
-        //   )
-        //   .pipe(
-        //     catchError((err) => {
-        //       console.error(err);
-        //       return throwError(err);
-        //     })
-        //   )
-        //   .subscribe((user: any) => {
-        //     const card = user.card;
-        //     obj = { card, obj };
-        //     console.log('-------', obj);
-        //     console.log('-obj------', obj);
-        //     this.http
-        //       .patch(
-        //         `http://localhost:3000/userRegistration/${
-        //           JSON.parse(this.loggedIn).id
-        //         }`,
-        //         { card: obj }
-        //       )
-        //       .subscribe((data) => console.log(data));
-        //   });
-
         this.http
           .patch(
-            `http://localhost:3000/userRegistration/${
+            `http://localhost:8080/api/v1/customers/${
               JSON.parse(this.loggedIn).id
             }`,
             { card: obj }
           )
           .subscribe((data) => console.log(data));
+        alert('Added To Your Cart');
         this.ngOnInit();
-        // const data = {
-        //   name: this.theUser.name,
-        //   email: this.theUser.email,
-        //   gender: this.theUser.gender,
-        //   dob: this.theUser.dob,
-        //   password: this.theUser.password,
-        //   card: this.theUser.card + obj,
-        //   wishList: this.theUser.wishList,
-        //   id: this.theUser.id,
-        // };
-        // console.log(obj);
-        // console.log(data);
-        // this.service.editUser(this.theUser.id, data).subscribe({
-        //   next: (r) => {
-        //     console.log(r);
-        //   },
-        //   error: (e) => {
-        //     alert(e);
-        //   },
-        // });
       }
     }
   }
