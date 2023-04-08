@@ -1,0 +1,167 @@
+<mat-dialog-content class="dialog-content">
+  <!-- your dialog content goes here -->
+
+  <div class="container w-50 border mt-5" id="form">
+    <form
+      class="mt-5, my-form"
+      [formGroup]="myForm"
+      (ngSubmit)="submit()"
+      name="myForm"
+    >
+    <!-- <input type="hidden" formControlName> -->
+      <div class="mb-3">
+        <label for="UrunAdi" class="form-label">Product Name</label>
+        <input
+          formControlName="name"
+          type="text"
+          class="form-control"
+          id="UrunAdi"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="UrunID" class="form-label">Offer Price</label>
+        <input
+          formControlName="offerPrice"
+          type="text"
+          class="form-control"
+          id="UrunID"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="UrunID" class="form-label">Regular Price</label>
+        <input
+          formControlName="regularPrice"
+          type="text"
+          class="form-control"
+          id="UrunID"
+          required
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="UrunID" class="form-label">Description</label>
+        <input
+          formControlName="description"
+          type="text"
+          class="form-control"
+          id="UrunID"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="UrunMiktar">Stock Quantity</label>
+        <input
+          formControlName="quantity"
+          type="number"
+          class="form-control"
+          id="UrunMiktar"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="Kategori" class="form-label">Product Category</label>
+        <select
+          formControlName="category"
+          id="Kategori"
+          class="ms-1 d-block w-100"
+          required
+        >
+          <option value="man">Man</option>
+          <option value="women">Women</option>
+          <option value="lifeStyle">Life Style</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="UrunID" class="form-label">Sub Category</label>
+        <input
+          formControlName="subCate"
+          type="text"
+          class="form-control"
+          id="UrunID"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="UrunID" class="form-label">Manufacture</label>
+        <input
+          formControlName="manufacture"
+          type="text"
+          class="form-control"
+          id="UrunID"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="UrunID" class="form-label">Product Size</label>
+        <input
+          formControlName="productSize"
+          type="text"
+          class="form-control"
+          id="UrunID"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="UrunID" class="form-label">Product Color</label>
+        <input
+          formControlName="productColor"
+          type="text"
+          class="form-control"
+          id="UrunID"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="UrunID" class="form-label">Weight</label>
+        <input
+          formControlName="weight"
+          type="text"
+          class="form-control"
+          id="UrunID"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="UrunImage" class="form-label">Product Image1</label>
+        <input
+          formControlName="productImage_1"
+          type="text"
+          class="form-control"
+          id="UrunImage"
+          placeholder="Paste Product Image Url: ex= https://example"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="UrunImage" class="form-label">Product Image2</label>
+        <input
+          formControlName="productImage_2"
+          type="text"
+          class="form-control"
+          id="UrunImage"
+          placeholder="Paste Product Image Url: ex= https://example"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="UrunImage" class="form-label">Product Image3</label>
+        <input
+          formControlName="productImage_3"
+          type="text"
+          class="form-control"
+          id="UrunImage"
+          placeholder="Paste Product Image Url: ex= https://example"
+        />
+      </div>
+      <div class="d-flex justify-content-center">
+        <button
+          type="submit"
+          class="btn btn-success text-white btn-outline-success form-control w-50 m-3"
+          id="ekleButton"
+        >
+          Update
+        </button>
+      </div>
+    </form>
+  </div>
+</mat-dialog-content>

@@ -1,0 +1,47 @@
+<div class="main" id="main">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Offer Price</th>
+        <th scope="col">Regular Price</th>
+        <th scope="col">QTY</th>
+        <th scope="col">Category</th>
+        <th scope="col">Category</th>
+        <th scope="col">Sub Category</th>
+        <th scope="col">Manufacture</th>
+        <th scope="col">Size</th>
+        <th scope="col">Color</th>
+        <th scope="col">Weight</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of allProducts">
+        <td>{{ i.name }}</td>
+        <td>{{ i.offerPrice }}</td>
+        <td>{{ i.regularPrice }}</td>
+        <td>{{ i.quantity }}</td>
+        <td>{{ i.category }}</td>
+        <td>{{ i.subCate }}</td>
+        <td>{{ i.manufacture }}</td>
+        <td>{{ i.productSize }}</td>
+        <td>{{ i.productColor }}</td>
+        <td>{{ i.weight }}</td>
+        <td>
+          <button
+            data-toggle="modal"
+            data-target="#myModal"
+            class="btn btn-primary"
+            (click)="onUpdate(i)"
+            style="margin-right: 20px"
+          >
+            Edit
+          </button>
+          <button class="btn btn-danger" (click)="onDelete(i.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Modal -->
+</div>

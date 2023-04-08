@@ -1,0 +1,33 @@
+<div class="main" id="main">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Date Of Birth</th>
+        <th scope="col">Password</th>
+        <th scope="col">Cart</th>
+        <th scope="col">Wish List</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of allProducts">
+        <td>{{ i.name }}</td>
+        <td>{{ i.email }}</td>
+        <td>{{ i.gender }}</td>
+        <td>{{ i.dob }}</td>
+        <td>{{ i.password }}</td>
+        <td>{{ i.card }}</td>
+        <td>{{ i.wishList }}</td>
+        <td>
+          <button class="btn btn-danger" (click)="onDelete(i.id)">
+            Delete The User
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Modal -->
+</div>

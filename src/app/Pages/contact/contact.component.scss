@@ -1,0 +1,352 @@
+/* Contact Page */
+.contact-me_grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2rem 1fr 2rem;
+  grid-template-columns: 2rem 1fr 2rem;
+  -ms-grid-rows: 70px 1fr;
+  grid-template-rows: 70px 1fr;
+  //   background: url("../image/Vector-down.svg") no-repeat center/cover;
+  padding-bottom: 50px;
+}
+
+.contact-me_grid .contact-me_ifo {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  -ms-grid-row: 2;
+  grid-row: 2;
+}
+
+.contact-me_grid .contact-me_ifo .contact-info h2 {
+  font-size: 2.5rem;
+  color: #0047e0;
+  margin-bottom: 20px;
+}
+
+.contact-me_grid .contact-me_ifo .contact-info div {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.contact-me_grid .contact-me_ifo .contact-info div span {
+  color: #565656;
+  font-weight: initial;
+}
+
+.contact-me_grid .contact-me_ifo .contact-info div i {
+  color: #0047e0;
+  font-size: 1.2rem;
+  margin-right: 8px;
+}
+
+.contact-me_grid .contact-me_ifo #map {
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 270px;
+  background: linear-gradient(to right, #0047e0 4px, transparent 4px) 0 0,
+    linear-gradient(to right, #0047e0 4px, transparent 4px) 0 100%,
+    linear-gradient(to left, #0047e0 4px, transparent 4px) 100% 0,
+    linear-gradient(to left, #0047e0 4px, transparent 4px) 100% 100%,
+    linear-gradient(to bottom, #0047e0 4px, transparent 4px) 0 0,
+    linear-gradient(to bottom, #0047e0 4px, transparent 4px) 100% 0,
+    linear-gradient(to top, #0047e0 4px, transparent 4px) 0 100%,
+    linear-gradient(to top, #0047e0 4px, transparent 4px) 100% 100%;
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+}
+
+.get-in_touch_section {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2rem 1fr 2rem;
+  grid-template-columns: 2rem 1fr 2rem;
+  -ms-grid-rows: 70px 1fr;
+  grid-template-rows: 70px 1fr;
+}
+
+.get-in_touch_section .get-in_touch {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  -ms-grid-row: 2;
+  grid-row: 2;
+}
+
+.get-in_touch_section .get-in_touch .svg-holder {
+  text-align: center;
+}
+
+.get-in_touch_section .get-in_touch .svg-holder svg {
+  margin: auto;
+}
+
+.get-in_touch_section .get-in_touch .svg-holder svg #ms-bg_last {
+  -webkit-animation: msBack 25s linear infinite;
+  animation: msBack 25s linear infinite;
+  transform-box: fill-box;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+}
+
+.get-in_touch_section .get-in_touch .svg-holder svg #ms-bg_first {
+  animation: msBack 30s linear infinite reverse;
+  transform-box: fill-box;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+}
+
+.get-in_touch_section .get-in_touch .svg-holder svg #ms-addrass {
+  -webkit-animation: msAddrass 2s linear infinite alternate;
+  animation: msAddrass 2s linear infinite alternate;
+  transform-box: fill-box;
+}
+
+.get-in_touch_section .get-in_touch .svg-holder svg #ms-info {
+  -webkit-animation: msInfo 2.2s linear infinite alternate;
+  animation: msInfo 2.2s linear infinite alternate;
+  transform-box: fill-box;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+}
+
+.get-in_touch_section .get-in_touch .svg-holder svg #ms-fly {
+  -webkit-animation: msFly 3s linear infinite alternate;
+  animation: msFly 3s linear infinite alternate;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+}
+
+.get-in_touch_section .get-in_touch .info h2 {
+  font-size: 2.5rem;
+  color: #0047e0;
+}
+
+.get-in_touch_section .get-in_touch .info form {
+  margin-top: 35px;
+}
+
+.get-in_touch_section .get-in_touch .info form .from-flex div div {
+  margin-bottom: 25px;
+}
+
+.get-in_touch_section .get-in_touch .info form .from-flex div div label {
+  display: block;
+  color: #565656;
+  font-weight: 500;
+  margin-bottom: 10px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.get-in_touch_section .get-in_touch .info form .from-flex div div input {
+  height: 55px;
+  width: 100%;
+  border: none;
+  background-color: #f3f4f5;
+  border-bottom: 1px solid black;
+  border-radius: 5px;
+  outline: none;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+}
+
+.get-in_touch_section .get-in_touch .info form .message label {
+  display: block;
+  color: #565656;
+  font-weight: 500;
+  margin-bottom: 10px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.get-in_touch_section .get-in_touch .info form .message #message {
+  height: 135px;
+  width: 100%;
+  border: none;
+  background-color: #f3f4f5;
+  border-bottom: 1px solid black;
+  border-radius: 5px;
+  outline: none;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 30px;
+}
+
+.get-in_touch_section .get-in_touch .info form .submit-holder {
+  text-align: center;
+}
+
+.get-in_touch_section .get-in_touch .info form .submit-holder #submit {
+  width: 210px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  padding: 12px 20px;
+  border: 2px solid #0047e0;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #0047e0;
+  font-family: "Montserrat", sans-serif;
+  -webkit-transition: 0.5;
+  transition: 0.5;
+}
+
+.get-in_touch_section .get-in_touch .info form .submit-holder #submit:hover {
+  background-color: #fff;
+  color: #0047e0;
+}
+
+.contact-banner h1 {
+  text-align: center;
+  margin: 150px 0px;
+  color: #0047e0;
+  font-size: 2.5rem;
+}
+
+@media screen and (min-width: 1080px) {
+  .contact-me_grid {
+    -ms-grid-columns: 80px 1fr 80px;
+    grid-template-columns: 80px 1fr 80px;
+  }
+  .contact-me_grid .contact-me_ifo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+  .contact-me_grid .contact-me_ifo .contact-info h2 {
+    font-size: 3.5rem;
+  }
+  .contact-me_grid .contact-me_ifo #map {
+    width: 50%;
+    height: 350px;
+    margin: 0;
+  }
+  .get-in_touch_section {
+    -ms-grid-columns: 80px 1fr 80px;
+    grid-template-columns: 80px 1fr 80px;
+    margin: 40px 0px;
+  }
+  .get-in_touch_section .get-in_touch {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+  }
+  .get-in_touch_section .get-in_touch .svg-holder svg {
+    width: 481px;
+    height: 481px;
+  }
+  .get-in_touch_section .get-in_touch .info {
+    width: 50%;
+  }
+  .get-in_touch_section .get-in_touch .info h2 {
+    font-size: 3.5rem;
+  }
+  .get-in_touch_section .get-in_touch .info form .from-flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+  .get-in_touch_section .get-in_touch .info form .from-flex div div input {
+    width: 120%;
+  }
+  .get-in_touch_section .get-in_touch .info form .message #message {
+    width: 109%;
+  }
+  .get-in_touch_section .get-in_touch .info form .submit-holder {
+    text-align: right;
+  }
+  .get-in_touch_section .get-in_touch .info form .submit-holder #submit {
+    margin-right: -9.5%;
+  }
+}
+
+@-webkit-keyframes msInfo {
+  to {
+    -webkit-transform: translate(-10px, 20px);
+    transform: translate(-10px, 20px);
+  }
+}
+
+@keyframes msInfo {
+  to {
+    -webkit-transform: translate(-10px, 20px);
+    transform: translate(-10px, 20px);
+  }
+}
+
+@-webkit-keyframes msBack {
+  to {
+    -webkit-transform: rotateZ(360deg);
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes msBack {
+  to {
+    -webkit-transform: rotateZ(360deg);
+    transform: rotateZ(360deg);
+  }
+}
+
+@-webkit-keyframes msFly {
+  to {
+    -webkit-transform: rotateX(60deg);
+    transform: rotateX(60deg);
+  }
+}
+
+@keyframes msFly {
+  to {
+    -webkit-transform: rotateX(60deg);
+    transform: rotateX(60deg);
+  }
+}
+
+@-webkit-keyframes msAddrass {
+  to {
+    -webkit-transform: rotateY(10deg) rotateZ(20deg) rotateX(-10deg);
+    transform: rotateY(10deg) rotateZ(20deg) rotateX(-10deg);
+  }
+}
+
+@keyframes msAddrass {
+  to {
+    -webkit-transform: rotateY(10deg) rotateZ(20deg) rotateX(-10deg);
+    transform: rotateY(10deg) rotateZ(20deg) rotateX(-10deg);
+  }
+}
+
+/* lastly Added */
+@keyframes message-screen_line {
+  from {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+  to {
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+  }
+}

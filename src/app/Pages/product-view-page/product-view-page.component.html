@@ -1,0 +1,281 @@
+<div class="holder">
+  <div class="product-card">
+    <div class="image-container">
+      <div class="cover-image product-image">
+        <img src="{{ productIndividual.productImage_1 }}" alt="" />
+      </div>
+      <div class="more-image-container">
+        <div class="more-image product-image">
+          <img src="{{ productIndividual.productImage_1 }}" alt="" />
+        </div>
+        <div class="more-image product-image">
+          <img src="{{ productIndividual.productImage_2 }}" alt="" />
+        </div>
+        <div class="more-image product-image">
+          <img src="{{ productIndividual.productImage_3 }}" alt="" />
+        </div>
+      </div>
+    </div>
+    <div class="product-info">
+      <!-- <a href="#" class="free-shipping">Free shipping</a> -->
+      <h3 class="product-name">{{ productIndividual.name }}</h3>
+      <p class="regular-price">{{ productIndividual.regularPrice }} TK</p>
+      <p class="discount-price">{{ productIndividual.offerPrice }} TK</p>
+      <p class="offer-info">{{ productIndividual.description }}</p>
+      <a
+        (click)="redirectToBuyPage()"
+        class="add-to-cart"
+        style="cursor: pointer"
+      >
+        <i class="fa fa-plus"></i>
+        <span> Buy Now</span>
+      </a>
+      <div class="sss">
+        <form>
+          <div class="size_color">
+            <div class="size">
+              <label for="size">Size</label>
+              <select ngModel name="size" id="">
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="XXL">XXL</option>
+              </select>
+            </div>
+            <br />
+            <div class="color">
+              <label for="color">Color</label>
+              <select ngModel name="color" id="">
+                <option value="{{ productIndividual.color }}">
+                  {{ productIndividual.color }}
+                </option>
+              </select>
+            </div>
+          </div>
+          <div class="qty">
+            <label for="qty">QTY</label>
+            <input type="number" ngModel name="qty" />
+          </div>
+        </form>
+      </div>
+      <div class="stock">
+        <div class="stock-status"></div>
+        <p class="stock-info">
+          <span *ngIf="productIndividual.quantity">{{
+            productIndividual.quantity
+          }}</span>
+          <span *ngIf="!productIndividual.quantity">50</span>+ pcs. in stock.
+        </p>
+      </div>
+      <div class="buttons">
+        <a class="button card" id="card" style="margin-right: 20px">
+          <span> Add to cart</span>
+        </a>
+        <a class="button card" id="card">
+          <span> Add to wishlist</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- End of product -->
+  <!-- Start review Section -->
+
+  <div class="container">
+    <h2>Reviews</h2>
+    <hr />
+    <div class="no-reviews text-center">
+      <p>There are currently no reviews for this product.</p>
+      <button class="btn btn-dark btn-lg writeReviewBtn">Write a Review</button>
+      <hr />
+    </div>
+    <div class="row reviewBody">
+      <div class="col-sm-4 col-md-3">
+        <div class="visible-xs-block">
+          <div class="form-group">
+            <select class="form-control">
+              <option value="0">show all (1346)</option>
+              <option value="5">★★★★★ (1247)</option>
+              <option value="4">★★★★☆ (47)</option>
+              <option value="3">★★★☆☆ (27)</option>
+              <option value="2">★★☆☆☆ (24)</option>
+              <option value="1">★☆☆☆☆ (1)</option>
+            </select>
+          </div>
+        </div>
+        <div class="hidden-xs">
+          <div class="form-group">
+            <h5>Filter Reviews</h5>
+            <ul class="list-group">
+              <li class="list-group-item">
+                <span class="allReviews">★★★★★</span> (1247)
+              </li>
+              <li class="list-group-item">
+                <span class="allReviews">★★★★☆</span> (47)
+              </li>
+              <li class="list-group-item">
+                <span class="allReviews">★★★☆☆</span> (27)
+              </li>
+              <li class="list-group-item">
+                <span class="allReviews">★★☆☆☆</span> (24)
+              </li>
+              <li class="list-group-item">
+                <span class="allReviews">★☆☆☆☆</span> (1)
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-8 col-md-9 left-side">
+        <div class="row filterByOldestToNew">
+          <div class="col-sm-6 col-sm-push-6 col-md-4 col-md-push-8">
+            <select>
+              <option value="new">sort newest to oldest</option>
+              <option value="old">sort oldest to newest</option>
+            </select>
+          </div>
+          <div class="col-sm-6 col-sm-pull-6 col-md-8 col-md-pull-4 allResults">
+            <h5>Showing 1230 - 1235 of 1346</h5>
+          </div>
+        </div>
+        <div class="reviewHolder">
+          <div class="review">
+            <div class="row">
+              <div class="col-sm-3">
+                <h4 class="customerReview">★★★★☆</h4>
+              </div>
+              <div class="col-sm-9 reviewCard">
+                <div class="reviewTex">
+                  <h4>Lorem ipsum dolor sit</h4>
+                  <h5>Malcolm Reynolds</h5>
+                  <p>
+                    Lorem ipsum dolor sit amet, ut suas temporibus his. Te
+                    noster dolorum luptatum pri. Duo erroribus incorrupte at.
+                  </p>
+                </div>
+
+                <!-- review Images -->
+                <div>
+                  <h4>Product Image</h4>
+
+                  <div class="img-grid">
+                    <img
+                      src="https://static.pexels.com/photos/160107/pexels-photo-160107.jpeg"
+                      alt=""
+                    />
+                    <img
+                      src="https://static.pexels.com/photos/356056/pexels-photo-356056.jpeg"
+                      alt=""
+                    />
+                    <img
+                      src="https://static.pexels.com/photos/373076/pexels-photo-373076.jpeg"
+                      alt=""
+                    />
+                    <img
+                      src="https://static.pexels.com/photos/158826/structure-light-led-movement-158826.jpeg"
+                      alt=""
+                    />
+                    <img
+                      src="https://static.pexels.com/photos/50711/board-electronics-computer-data-processing-50711.jpeg"
+                      alt=""
+                    />
+                    <img
+                      src="https://static.pexels.com/photos/247932/pexels-photo-247932.jpeg"
+                      alt=""
+                    />
+                    <img
+                      src="https://static.pexels.com/photos/96381/pexels-photo-96381.jpeg"
+                      alt=""
+                    />
+                    <img
+                      src="https://static.pexels.com/photos/450035/pexels-photo-450035.jpeg"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="review">
+            <div class="row">
+              <div class="col-sm-3">
+                <h4 class="customerReview">★★★☆☆</h4>
+              </div>
+              <div class="col-sm-9">
+                <h4>Regione mentitum legendos ne usu</h4>
+                <h5>Zoë Washburne</h5>
+                <p>
+                  Regione mentitum legendos ne usu. Nam omnesque detraxit
+                  contentiones cu.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="review">
+            <div class="row">
+              <div class="col-sm-3">
+                <h4 class="customerReview">★★★★☆</h4>
+              </div>
+              <div class="col-sm-9">
+                <h4>His nihil ubique cu</h4>
+                <h5>Hoban Washburne</h5>
+                <p>
+                  His nihil ubique cu, nec putent perpetua id, eum porro option
+                  ex. Ad vel case option democritum, malis propriae perfecto in
+                  pri.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="review">
+            <div class="row">
+              <div class="col-sm-3">
+                <h4 class="customerReview">★★★★★</h4>
+              </div>
+              <div class="col-sm-9">
+                <h4>Est case bonorum ei</h4>
+                <h5>Jayne Cobb</h5>
+                <p>
+                  Est case bonorum ei. Mei ei fastidii pertinax dissentias, id
+                  ius voluptua electram, sit facilis accusam perfecto at.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="review">
+            <div class="row">
+              <div class="col-sm-3">
+                <h4 class="customerReview">★★☆☆☆</h4>
+              </div>
+              <div class="col-sm-9">
+                <h4>Consul nostro detraxit</h4>
+                <h5>Kaylee Frye</h5>
+                <p>Consul nostro detraxit has ea, graecis incorrupte in his.</p>
+              </div>
+            </div>
+          </div>
+
+          <nav class="text-center" aria-label="Page navigation">
+            <ul class="pagination">
+              <li>
+                <a href="#" aria-label="Previous"
+                  ><span aria-hidden="true">&laquo;</span></a
+                >
+              </li>
+              <li><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">5</a></li>
+              <li>
+                <a href="#" aria-label="Next"
+                  ><span aria-hidden="true">&raquo;</span></a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

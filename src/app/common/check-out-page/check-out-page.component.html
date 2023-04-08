@@ -1,0 +1,119 @@
+<mat-dialog-content class="dialog-content">
+  <div class="for_grid">
+    <div class="for_grid-child">
+      <div class="enter" style="margin-left: -120px; margin-bottom: 0px">
+        <h2>Enter Your Details</h2>
+      </div>
+      <div class="names">
+        <form (ngSubmit)="submit(f)" #f="ngForm">
+          <p>First name<span class="op">*</span></p>
+          <input
+            ngModel
+            name="firstName"
+            autofocus
+            class="input"
+            type="text"
+            required
+          />
+          <p>Last name<span class="op">*</span></p>
+          <input ngModel name="lastName" class="input" type="text" />
+          <p>Email address<span class="op">*</span></p>
+          <input ngModel name="email" class="input" type="email" />
+          <p>Phone number<span class="op">*</span></p>
+          <input ngModel name="phone" class="input" type="tel" value="+880" />
+          <div class="requist">
+            <p>Delivery Address: <span id="op">(Required)</span></p>
+            <!-- <input class="input" id="ok" type="text" /> -->
+            <textarea
+              ngModel
+              name="address"
+              placeholder="Road No 3, Block A, Rampura Banasree, Dkaka."
+              id="ok"
+              cols="30"
+              rows="5"
+            ></textarea>
+          </div>
+          <div class="requist">
+            <p>Please write your request. <span id="op">(optional)</span></p>
+            <!-- <input class="input" id="ok" type="text" /> -->
+            <textarea
+              ngModel
+              name="request"
+              id="ok"
+              cols="30"
+              rows="5"
+            ></textarea>
+          </div>
+          <div>
+            <h3>
+              Total Amount to Be Paid: {{ oneData.offerPrice
+              }}<span class="op">*</span>
+            </h3>
+            <input
+              type="hidden"
+              [(ngModel)]="oneData.offerPrice"
+              name="amount"
+              ngModel
+            />
+            <input type="hidden" ngModel name="theOrder" />
+            <input type="hidden" ngModel name="theUser" />
+            <br />
+            <p>
+              How You Would Like to Pay? note: Cash On Delivery Available!
+              <span class="op">*</span>
+            </p>
+            <select class="input" name="paymentMethod" ngModel id="">
+              <option value="cashOn">Cash On Delivery</option>
+              <option value="payNow">I will Pay Now</option>
+            </select>
+          </div>
+          <br />
+          <div class="payment_holder">
+            <!-- Form filed ror book -->
+            <p>
+              If You Wanna Pay Now Chose How U Would like to pay?
+              <span class="op">*</span>
+            </p>
+            <div class="payment_logo-holder">
+              <div class="bikash">
+                <label for="ab">
+                  <img id="bikash" src="assets/img/images.jpeg" alt="bikash" />
+                </label>
+                <input type="radio" checked id="ab" name="za" />
+              </div>
+              <div class="nagad">
+                <label for="ar">
+                  <img
+                    id="nagad"
+                    src="assets/img/Nagad-Logo.wine.png"
+                    alt="nagad"
+                  />
+                </label>
+                <input type="radio" id="ar" name="za" />
+              </div>
+              <div class="rocket">
+                <label for="au">
+                  <img id="rocket" src="assets/img/rocket.png" alt="rocket" />
+                </label>
+                <input type="radio" id="au" name="za" />
+              </div>
+            </div>
+            <p><span id="yup">Bikash</span> number<span class="op">*</span></p>
+            <input
+              ngModel
+              name="bikashNo"
+              class="input"
+              type="tel"
+              required
+              value="+880"
+            />
+            <p>TrxID<span class="op">*</span></p>
+            <input ngModel name="TrxID" class="input" type="text" />
+            <br />
+            <input id="submit" type="submit" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</mat-dialog-content>

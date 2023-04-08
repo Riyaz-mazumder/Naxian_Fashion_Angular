@@ -1,0 +1,81 @@
+<div class="navHolder navbar-light bg-light fixed-top">
+  <nav class="navbar navbar-expand-lg">
+    <a style="font-size: 700" class="navbar-brand" href="#">Naxian Fashion</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li>
+          <form class="form-inline" class="serch_f">
+            <input
+              class="form-control mr-sm-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">
+              <span style="margin-right: 5px">Search</span>
+              <i
+                style="display: inline"
+                class="fa fa-search"
+                aria-hidden="true"
+              ></i>
+            </button>
+          </form>
+        </li>
+        <form class="d-flex floot">
+          <button
+            class="btn btn-outline-dark"
+            type="submit"
+            style="margin-right: 10px"
+          >
+            <i class="fa fa-heart"></i>
+            Wishlist
+            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+          </button>
+
+          <button
+            class="btn btn-outline-dark"
+            type="submit"
+            style="margin-right: 30px"
+          >
+            <!-- <i class="fa fa-cart"></i> -->
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            Cart
+            <span class="badge bg-dark text-white ms-1 rounded-pill">
+              <span>{{ cartItems }}</span></span
+            >
+          </button>
+        </form>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contact">Contact Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/login">SignUp/Login</a>
+        </li>
+        <li>
+          <div class="profile-dropdown">
+            <a href="#" class="profile-btn">
+              <i class="fas fa-user"></i>
+            </a>
+            <div class="profile-content">
+              <p>Logged in as {{ userName }}</p>
+              <button (click)="deleteUser()">
+                <i class="fa fa-sign-out" aria-hidden="true"></i> Log Out
+              </button>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>

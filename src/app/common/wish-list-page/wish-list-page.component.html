@@ -1,0 +1,63 @@
+<div class="py-3 py-md-5 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="shopping-cart">
+          <div class="cart-header d-none d-sm-none d-mb-block d-lg-block">
+            <div class="row">
+              <div class="col-md-6">
+                <h4>Products</h4>
+              </div>
+              <div class="col-md-2">
+                <h4>Price</h4>
+              </div>
+              <div class="col-md-2">
+                <h4>Add To Cart</h4>
+              </div>
+              <div class="col-md-2">
+                <h4>Remove</h4>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cart Item Start -->
+          <div class="cart-item" *ngFor="let product of Products">
+            <div class="row">
+              <div class="col-md-6 my-auto">
+                <a href="">
+                  <label class="product-name">
+                    <img
+                      src="{{ product.productImage_1 }}"
+                      style="width: 50px; height: 50px"
+                      alt=""
+                    />
+                    {{ product.name }}
+                  </label>
+                </a>
+              </div>
+              <div class="col-md-2 my-auto">
+                <label class="price">{{ product.offerPrice }} </label>
+              </div>
+              <div class="col-md-2 col-5 my-auto">
+                <div class="remove" (click)="WishListToCart(product.id)">
+                  <a class="btn btn-success btn-sm">
+                    <i class="fas fa-shopping-cart"></i> Add To Cart
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-2 col-5 my-auto">
+                <div class="remove" (click)="WishListProductRemove(product.id)">
+                  <a class="btn btn-danger btn-sm">
+                    <i class="fa fa-trash"></i> Remove
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cart Item end -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

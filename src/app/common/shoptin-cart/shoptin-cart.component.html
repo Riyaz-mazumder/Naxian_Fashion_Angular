@@ -1,0 +1,114 @@
+<section class="h-100 h-custom" style="background-color: #d2c9ff">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12">
+        <div
+          class="card card-registration card-registration-2"
+          style="border-radius: 15px"
+        >
+          <div class="card-body p-0 card">
+            <div class="row g-0">
+              <div class="col-lg-8">
+                <div class="p-5">
+                  <div
+                    class="d-flex justify-content-between align-items-center mb-5"
+                  >
+                    <h1 class="fw-bold mb-0 text-black">Shopping Cart</h1>
+                    <h6 class="mb-0 text-muted">{{ totalItems }} Items</h6>
+                  </div>
+                  <hr class="my-4" />
+
+                  <!-- Frist Start -->
+
+                  <div
+                    *ngFor="let products of Products; index as i"
+                    class="row mb-4 d-flex justify-content-between align-items-center"
+                  >
+                    <div class="col-md-2 col-lg-2 col-xl-2">
+                      <img
+                        src="{{ products.productImage_1 }}"
+                        class="img-fluid rounded-3"
+                        alt="Cotton T-shirt"
+                      />
+                    </div>
+                    <div class="col-md-3 col-lg-3 col-xl-3">
+                      <h6 class="text-muted">{{ products.subCate }}</h6>
+                      <h6 class="text-black mb-0">{{ products.name }}</h6>
+                    </div>
+
+                    <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+                      <input
+                        id="form1"
+                        min="1"
+                        name="quantity"
+                        [(ngModel)]="products.quantity"
+                        (ngModelChange)="updateQuantity(i, $event)"
+                        type="number"
+                        class="form-control form-control-sm"
+                      />
+                    </div>
+                    <div class="col-md-3 col-lg-2 col-xl-2 d-flex">
+                      <h6 class="mb-0">
+                        {{ products.offerPrice * products.quantity }}
+                      </h6>
+                    </div>
+                    <div
+                      class="col-md-1 col-lg-1 col-xl-1 text-end"
+                      (click)="cardProductRemove(products.id)"
+                    >
+                      <a class="text-muted"><i class="fas fa-times"></i></a>
+                    </div>
+                  </div>
+                  <!-- Frist End -->
+
+                  <hr class="my-4" />
+
+                  <div class="pt-5">
+                    <h6 class="mb-0">
+                      <a href="#!" class="text-body"
+                        ><i class="fas fa-long-arrow-alt-left me-2"></i>Back to
+                        shop</a
+                      >
+                    </h6>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 summary">
+                <div class="card bg-primary text-white rounded-3">
+                  <div class="card-body">
+                    <div
+                      class="d-flex justify-content-between align-items-center"
+                    >
+                      <h5 class="mb-0">Summary</h5>
+                      <img
+                        src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-6.webp"
+                        class="img-fluid rounded-3"
+                        style="width: 45px"
+                        alt="Avatar"
+                      />
+                    </div>
+                    <hr class="my-4" />
+                    <div class="d-flex justify-content-between mb-4">
+                      <p class="mb-2">Total</p>
+                      <p class="mb-2">{{ totalValue }} TK</p>
+                    </div>
+
+                    <button type="button" class="btn btn-info btn-block btn-lg">
+                      <div class="d-flex justify-content-between">
+                        <span>{{ totalValue }} ৳</span>
+                        <span>
+                          Checkout
+                          <i class="fas fa-long-arrow-alt-right ms-2"></i
+                        ></span>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
