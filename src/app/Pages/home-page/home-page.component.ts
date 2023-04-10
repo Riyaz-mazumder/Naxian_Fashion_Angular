@@ -47,6 +47,7 @@ export class HomePageComponent implements OnInit {
 
   // Shopping Card Clicked
   shopping(f: string, obj: any) {
+    obj.id = null;
     if (this.loggedIn === null) {
       alert('Login Or Create an Account First');
       this.router.navigate(['/login']);
@@ -62,11 +63,11 @@ export class HomePageComponent implements OnInit {
           .subscribe((data) => console.log(data));
       } else if (f === 'formCard') {
         this.http
-          .patch(
+          .put(
             `http://localhost:8080/api/v1/customers/${
               JSON.parse(this.loggedIn).id
             }`,
-            { card: obj }
+            { card: Object.keys(obj) }
           )
           .subscribe((data) => console.log(data));
         alert('Added To Your Cart');
