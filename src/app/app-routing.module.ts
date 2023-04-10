@@ -15,6 +15,7 @@ import { HomePageMainComponent } from './admin/Pages/home-page-main/home-page-ma
 
 import { AproveOrderComponent } from './admin/Tables/order/aprove-order/aprove-order.component';
 import { AllUserComponent } from './admin/Tables/users/all-user/all-user.component';
+import { ShowOrderComponent } from './admin/Tables/order/show-order/show-order.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -35,6 +36,7 @@ const routes: Routes = [
       { path: 'addNewProduct', component: AddNewProductComponent },
       { path: 'allProducts', component: AllProductsComponent },
       { path: 'approveOrders', component: AproveOrderComponent },
+      { path: 'showAllOrders', component: ShowOrderComponent },
       { path: 'allUser', component: AllUserComponent },
     ],
   },

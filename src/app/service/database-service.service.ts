@@ -71,10 +71,16 @@ export class DatabaseServiceService {
   getAllApprovedOrders() {
     return this.http.get(this.oUrl + '/approved');
   }
+  getAllOrders() {
+    return this.http.get(this.oUrl);
+  }
   getTheOrder(id: any) {
     return this.http.get(this.oUrl + '/' + id);
   }
   editOrder(id: any, newData: any) {
     return this.http.put(this.oUrl, newData);
+  }
+  makeOrderApproved(id: any) {
+    return this.http.put(this.oUrl + '/makeApprove/' + id, {});
   }
 }

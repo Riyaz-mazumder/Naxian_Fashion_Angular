@@ -33,23 +33,27 @@ export class CheckOutPageComponent implements OnInit {
   }
 
   submit(data: NgForm) {
-    data.value.theOrders = this.oneData;
-    data.value.customers = this.authService.getUser();
+    //  first setting the id value null
+    this.oneData.id = null;
+
+    data.value.theOrders = [this.oneData];
+    data.value.customerId = this.authService.getUserId();
     console.log(data.value);
 
     this.service.addOrder(data.value).subscribe({
       next: (r) => {
         console.log(r);
+        alert(
+          'Your Order Has Been Submitted. Tanks For Shopping With Us. ❤️ Buy More'
+        );
+        data.reset();
+        this.router.navigate(['/home']);
       },
       error: (e) => {
         console.log(e);
+        alert('Something Went Wrong Try Again');
       },
     });
-    alert(
-      'Your Order Has Been Submitted. Tanks For Shopping With Us. ❤️ Buy More'
-    );
-    data.reset();
     this.dialogRef.close();
-    this.router.navigate(['/home']);
   }
 }

@@ -39,8 +39,9 @@ export class AllProductsComponent implements OnInit {
   }
 
   onDelete(id: any) {
-    this.service.deleteProduct(id).subscribe(r=>{});
-    this.ngOnInit()
+    this.service.deleteProduct(id).subscribe((r) => {});
+    alert('Product Deleted');
+    this.ngOnInit();
   }
 
   //pop up

@@ -12,8 +12,8 @@
         <th scope="col">Payment Method</th>
         <th scope="col">Bikash No</th>
         <th scope="col">TrxID</th>
-        <th scope="col">Order Item Name</th>
-        <th scope="col">Order Item ID</th>
+        <!-- <th scope="col">Order Item Name</th>
+        <th scope="col">Order Item ID</th> -->
         <!-- <th scope="col">The User</th> -->
         <th scope="col">Actions</th>
       </tr>
@@ -40,8 +40,8 @@
           >
           <span *ngIf="i.paymentMethod !== 'cashOn'">{{ i.TrxID }}</span>
         </td>
-        <td>{{ i.theOrder.name }}</td>
-        <td>{{ i.theOrder.id }}</td>
+        <!-- <td>{{ i.theOrder.name }}</td>
+        <td>{{ i.theOrder.id }}</td> -->
         <!-- <td>{{ i.theUser.name }}</td> -->
         <td>
           <button

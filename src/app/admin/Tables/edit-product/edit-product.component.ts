@@ -23,6 +23,7 @@ export class EditProductComponent implements OnInit {
   ngOnInit(): void {
     console.log(this.oneData);
     this.myForm = new FormGroup({
+      id: new FormControl(null),
       name: new FormControl(null),
       offerPrice: new FormControl(null),
       regularPrice: new FormControl(null),
@@ -39,6 +40,7 @@ export class EditProductComponent implements OnInit {
       productImage_3: new FormControl(null),
     });
     this.myForm.setValue({
+      id: this.oneData.id,
       name: this.oneData.name,
       offerPrice: this.oneData.offerPrice,
       regularPrice: this.oneData.regularPrice,
@@ -63,6 +65,7 @@ export class EditProductComponent implements OnInit {
   submit() {
     console.log(this.myForm.value);
     this.service.editProduct(this.myForm.value).subscribe((r) => {});
+    alert('Product Updated');
     this.close();
   }
 }

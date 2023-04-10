@@ -15,4 +15,13 @@ export class AuthServiceService {
   getUser() {
     return sessionStorage.getItem(this.USER_KEY);
   }
+  getUserId() {
+    const data = sessionStorage.getItem(this.USER_KEY);
+    if (data) {
+      return JSON.parse(data).id;
+    } else {
+      // handle case where data is null
+      return null;
+    }
+  }
 }

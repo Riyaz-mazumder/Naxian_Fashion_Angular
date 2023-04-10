@@ -14,15 +14,25 @@ export class AproveOrderComponent implements OnInit {
     this.service.getAllUnApprovedOrders().subscribe({
       next: (r) => {
         this.allProducts = r;
+        console.log(r);
       },
       error: (err) => {
-        alert(err);
+        console.log(err);
       },
     });
+    console.log(this.allProducts);
   }
 
   onApprove(obj: any) {
-    alert('The Order Has been Approved...');
+    this.service.makeOrderApproved(obj.id).subscribe({
+      next: (r) => {
+        alert('The Order Has been Approved...');
+        this.ngOnInit();
+      },
+      error: (e) => {
+        alert('Something went wrong try again');
+      },
+    });
   }
   onDenied(obj: any) {
     alert('The Order Has been Denied...');
