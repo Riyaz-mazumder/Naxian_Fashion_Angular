@@ -2,7 +2,6 @@ import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
 import { DatabaseServiceService } from 'src/app/service/database-service.service';
 import { MatDialog } from '@angular/material/dialog';
 import { EditProductComponent } from '../../edit-product/edit-product.component';
-import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-all-products',

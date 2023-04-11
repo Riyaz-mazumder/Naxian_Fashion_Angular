@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { DatabaseServiceService } from 'src/app/service/database-service.service';
 
 @Component({
   selector: 'app-shoptin-cart',
@@ -6,6 +8,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./shoptin-cart.component.scss'],
 })
 export class ShoptinCartComponent {
+
+  allCartProducts!: any;
+
+  constructor(
+    private dialogRef: MatDialogRef<ShoptinCartComponent>,
+    private service: DatabaseServiceService,
+    @Inject(MAT_DIALOG_DATA) public data: any
+  ) {
+    this.allCartProducts = data;
+  }
   public Products = [
     {
       name: 'Casual Shirt 0.1',

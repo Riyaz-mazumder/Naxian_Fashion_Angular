@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { AuthServiceService } from 'src/app/service/auth-service.service';
 import { DatabaseServiceService } from 'src/app/service/database-service.service';
+import { ShoptinCartComponent } from '../shoptin-cart/shoptin-cart.component';
+import { WishListPageComponent } from '../wish-list-page/wish-list-page.component';
 
 @Component({
   selector: 'app-navbar',
@@ -10,7 +13,8 @@ import { DatabaseServiceService } from 'src/app/service/database-service.service
 export class NavbarComponent implements OnInit {
   constructor(
     private authService: AuthServiceService,
-    private service: DatabaseServiceService
+    private service: DatabaseServiceService,
+    private dialog: MatDialog
   ) {}
 
   loggedIn!: any;
@@ -43,5 +47,17 @@ export class NavbarComponent implements OnInit {
   deleteUser() {
     sessionStorage.removeItem(this.authService.USER_KEY);
     alert('You Have Logged Out: ');
+  }
+
+  onAddToCart(d: any) {
+    const dialogRef = this.dialog.open(ShoptinCartComponent, {
+      data: d,
+    });
+  }
+
+  onAddToWishlist(d: any) {
+    const dialogRef = this.dialog.open(WishListPageComponent, {
+      data: d,
+    });
   }
 }
