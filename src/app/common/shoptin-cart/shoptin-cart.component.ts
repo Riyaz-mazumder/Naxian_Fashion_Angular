@@ -1,6 +1,11 @@
 import { Component, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import {
+  MAT_DIALOG_DATA,
+  MatDialog,
+  MatDialogRef,
+} from '@angular/material/dialog';
 import { DatabaseServiceService } from 'src/app/service/database-service.service';
+import { CheckOutPageComponent } from '../check-out-page/check-out-page.component';
 
 @Component({
   selector: 'app-shoptin-cart',
@@ -8,12 +13,12 @@ import { DatabaseServiceService } from 'src/app/service/database-service.service
   styleUrls: ['./shoptin-cart.component.scss'],
 })
 export class ShoptinCartComponent {
-
   allCartProducts!: any;
 
   constructor(
     private dialogRef: MatDialogRef<ShoptinCartComponent>,
     private service: DatabaseServiceService,
+    private dialog: MatDialog,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     this.allCartProducts = data;
@@ -111,6 +116,7 @@ export class ShoptinCartComponent {
   ngOnInit(): void {
     this.calculateTotalValue();
     this.calculateTotalItems();
+    this.productsInCart = this.Products;
   }
 
   productQuantity!: number;
@@ -131,5 +137,18 @@ export class ShoptinCartComponent {
   cardProductRemove(id: number) {
     console.log(id);
     // cardProductRemoveQuery;
+  }
+
+  productsInCart: any;
+
+  buyAllFromShoppingCart() {
+    this.dialogRef.close();
+    const dialogRefs = this.dialog.open(CheckOutPageComponent, {
+      data: this.productsInCart,
+    });
+
+    // dialogRefs.afterClosed().subscribe((result) => {
+    //   console.log(`Dialog result: ${result}`);
+    // });
   }
 }
