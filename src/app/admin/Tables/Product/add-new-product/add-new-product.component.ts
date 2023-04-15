@@ -22,6 +22,6 @@ export class AddNewProductComponent {
       },
     });
     alert('Product Has Been Added');
-    // d.reset();
+    d.reset();
   }
 }

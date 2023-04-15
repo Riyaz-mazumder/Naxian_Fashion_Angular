@@ -3,7 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { catchError, throwError } from 'rxjs';
 import { AuthServiceService } from 'src/app/service/auth-service.service';
+import { CartServiceService } from 'src/app/service/cart-service.service';
 import { DatabaseServiceService } from 'src/app/service/database-service.service';
+import { WishListServiceService } from 'src/app/service/wish-list-service.service';
 
 @Component({
   selector: 'app-home-page',
@@ -15,6 +17,8 @@ export class HomePageComponent implements OnInit {
     private service: DatabaseServiceService,
     private authService: AuthServiceService,
     private router: Router,
+    private cartService: CartServiceService,
+    private wishListService: WishListServiceService,
     private http: HttpClient
   ) {}
 
@@ -48,30 +52,35 @@ export class HomePageComponent implements OnInit {
   // Shopping Card Clicked
   shopping(f: string, obj: any) {
     obj.id = null;
+    obj.quantity = 1;
+
     if (this.loggedIn === null) {
       alert('Login Or Create an Account First');
       this.router.navigate(['/login']);
     } else {
       if (f === 'formWishList') {
-        this.http
-          .patch(
-            `http://localhost:3000/userRegistration/${
-              JSON.parse(this.loggedIn).id
-            }`,
-            { wishList: obj }
-          )
-          .subscribe((data) => console.log(data));
+        console.log('Clicked');
+
+        this.wishListService.addToWishList(obj).subscribe({
+          next: (r) => {
+            alert('Added To Your Wishlist');
+            this.ngOnInit();
+          },
+          error: (e) => {
+            alert(e);
+          },
+        });
       } else if (f === 'formCard') {
-        this.http
-          .put(
-            `http://localhost:8080/api/v1/customers/${
-              JSON.parse(this.loggedIn).id
-            }`,
-            { card: Object.keys(obj) }
-          )
-          .subscribe((data) => console.log(data));
-        alert('Added To Your Cart');
-        this.ngOnInit();
+        this.cartService.addToCart(obj).subscribe({
+          next: (r) => {
+            alert('Added To Your Cart');
+            this.ngOnInit();
+          },
+          error: (e) => {
+            alert(e);
+          },
+        });
+        console.log('Clicked');
       }
     }
   }

@@ -4,6 +4,8 @@ import { AuthServiceService } from 'src/app/service/auth-service.service';
 import { DatabaseServiceService } from 'src/app/service/database-service.service';
 import { ShoptinCartComponent } from '../shoptin-cart/shoptin-cart.component';
 import { WishListPageComponent } from '../wish-list-page/wish-list-page.component';
+import { CartServiceService } from 'src/app/service/cart-service.service';
+import { WishListServiceService } from 'src/app/service/wish-list-service.service';
 
 @Component({
   selector: 'app-navbar',
@@ -14,15 +16,39 @@ export class NavbarComponent implements OnInit {
   constructor(
     private authService: AuthServiceService,
     private service: DatabaseServiceService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private cartService: CartServiceService,
+    private wishListService: WishListServiceService
   ) {}
 
   loggedIn!: any;
   userName!: any;
   cartItems = 0;
+  wishListItems = 0;
   theUser!: any;
-
+  products!: any;
+  wishListProducts!: any;
   ngOnInit(): void {
+    this.cartService.getAllFromCart().subscribe({
+      next: (r) => {
+        this.products = r;
+        this.cartItems = this.products.length;
+      },
+      error: (e) => {
+        alert(e);
+      },
+    });
+
+    this.wishListService.getAllWishList().subscribe({
+      next: (r) => {
+        this.wishListProducts = r;
+        this.wishListItems = this.wishListProducts.length;
+      },
+      error: (e) => {
+        alert(e);
+      },
+    });
+
     // logIn
     this.loggedIn = this.authService.getUser();
     this.userName = JSON.parse(this.loggedIn).name;
@@ -33,15 +59,11 @@ export class NavbarComponent implements OnInit {
         this.theUser = r;
       },
       error: (e) => {
-        alert(e);
+        console.log(e);
       },
     });
 
     //add to card
-    if (this.theUser !== undefined) {
-      this.cartItems = 1;
-    }
-    console.log(this.cartItems);
   }
 
   deleteUser() {

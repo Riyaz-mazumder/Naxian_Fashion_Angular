@@ -50,8 +50,8 @@ export class CheckOutPageComponent implements OnInit {
         this.router.navigate(['/home']);
       },
       error: (e) => {
-        console.log(e);
-        alert('Something Went Wrong Try Again');
+        // console.log(e);
+        // alert('Something Went Wrong Try Again');
       },
     });
     this.dialogRef.close();

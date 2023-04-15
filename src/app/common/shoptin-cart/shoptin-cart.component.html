@@ -42,7 +42,7 @@
                         min="1"
                         name="quantity"
                         [(ngModel)]="products.quantity"
-                        (ngModelChange)="updateQuantity(i, $event)"
+                        (ngModelChange)="updateQuantity(i, products, $event)"
                         type="number"
                         class="form-control form-control-sm"
                       />
@@ -53,6 +53,7 @@
                       </h6>
                     </div>
                     <div
+                      style="cursor: pointer"
                       class="col-md-1 col-lg-1 col-xl-1 text-end"
                       (click)="cardProductRemove(products.id)"
                     >
@@ -93,7 +94,11 @@
                       <p class="mb-2">{{ totalValue }} TK</p>
                     </div>
 
-                    <button type="button" class="btn btn-info btn-block btn-lg">
+                    <button
+                      (click)="buyAllFromShoppingCart()"
+                      type="button"
+                      class="btn btn-info btn-block btn-lg"
+                    >
                       <div class="d-flex justify-content-between">
                         <span>{{ totalValue }} ৳</span>
                         <span>

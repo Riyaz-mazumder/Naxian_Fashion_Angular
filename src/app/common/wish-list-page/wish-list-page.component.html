@@ -39,7 +39,10 @@
                 <label class="price">{{ product.offerPrice }} </label>
               </div>
               <div class="col-md-2 col-5 my-auto">
-                <div class="remove" (click)="WishListToCart(product.id)">
+                <div
+                  class="remove"
+                  (click)="WishListToCart(product, product.id)"
+                >
                   <a class="btn btn-success btn-sm">
                     <i class="fas fa-shopping-cart"></i> Add To Cart
                   </a>
