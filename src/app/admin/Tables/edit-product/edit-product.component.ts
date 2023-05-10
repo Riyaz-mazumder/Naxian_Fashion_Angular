@@ -38,6 +38,7 @@ export class EditProductComponent implements OnInit {
       productImage_1: new FormControl(null),
       productImage_2: new FormControl(null),
       productImage_3: new FormControl(null),
+      couponCode: new FormControl(null),
     });
     this.myForm.setValue({
       id: this.oneData.id,
@@ -55,6 +56,7 @@ export class EditProductComponent implements OnInit {
       productImage_1: this.oneData.productImage_1,
       productImage_2: this.oneData.productImage_2,
       productImage_3: this.oneData.productImage_3,
+      couponCode: this.oneData.couponCode,
     });
   }
 

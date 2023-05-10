@@ -43,3 +43,41 @@
 .section{
   z-index: 1000;
 }
+
+// Coupon Code 
+.coupon-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 20px;
+}
+
+label {
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+input[type="text"] {
+  height: 40px;
+  width: 200px;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 16px;
+}
+
+button#apply-coupon {
+  height: 40px;
+  padding: 5px 10px;
+  margin-left: 10px;
+  background-color: #1abc9c;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button#apply-coupon:hover {
+  background-color: #16a085;
+}

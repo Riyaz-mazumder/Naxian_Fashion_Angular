@@ -52,6 +52,7 @@
                         {{ products.offerPrice * products.quantity }}
                       </h6>
                     </div>
+           
                     <div
                       style="cursor: pointer"
                       class="col-md-1 col-lg-1 col-xl-1 text-end"
@@ -59,6 +60,16 @@
                     >
                       <a class="text-muted"><i class="fas fa-times"></i></a>
                     </div>
+
+                     <!-- Apply Coupon Code  -->
+                     <form (ngSubmit)="couponCodeApply(products.id, f)" #f="ngForm">
+                     <div class="coupon-container">
+                      <label for="coupon-code">Enter coupon code:</label>
+                      <input ngModule name="coupon" type="text" id="coupon-code" placeholder="Enter code here">
+                      <button type="submit" id="apply-coupon">Apply</button>
+                     </div>
+                     </form>
+
                   </div>
                   <!-- Frist End -->
 

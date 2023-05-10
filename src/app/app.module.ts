@@ -28,7 +28,7 @@ import { CheckOutPageComponent } from './common/check-out-page/check-out-page.co
 import { ShowOrderComponent } from './admin/Tables/order/show-order/show-order.component';
 import { AproveOrderComponent } from './admin/Tables/order/aprove-order/aprove-order.component';
 import { AllUserComponent } from './admin/Tables/users/all-user/all-user.component';
-import { CheckOutPageFromCartComponent } from './pages/check-out-page-from-cart/check-out-page-from-cart.component';
+
 
 
 @NgModule({
@@ -54,7 +54,7 @@ import { CheckOutPageFromCartComponent } from './pages/check-out-page-from-cart/
     ShowOrderComponent,
     AproveOrderComponent,
     AllUserComponent,
-    CheckOutPageFromCartComponent,
+  
   ],
   imports: [
     BrowserModule,

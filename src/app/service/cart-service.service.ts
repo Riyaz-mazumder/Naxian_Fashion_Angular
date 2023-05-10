@@ -22,4 +22,7 @@ export class CartServiceService {
   public updateCart(d: any) {
     return this.http.put(this.urlOfCart, d);
   }
+  public getById(id: number){
+    return this.http.get(this.urlOfCart + '/' + id);
+  }
 }

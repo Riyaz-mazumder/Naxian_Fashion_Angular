@@ -6,6 +6,7 @@ import {
 } from '@angular/material/dialog';
 import { CheckOutPageComponent } from '../check-out-page/check-out-page.component';
 import { CartServiceService } from 'src/app/service/cart-service.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-shoptin-cart',
@@ -23,88 +24,42 @@ export class ShoptinCartComponent {
   ) {
     this.allCartProducts = data;
   }
-  // public Products = [
-  //   {
-  //     name: 'Casual Shirt 0.1',
-  //     offerPrice: 800,
-  //     regularPrice: 600,
-  //     description: 'A good quality product',
-  //     quantity: 3,
-  //     category: 'man',
-  //     subCate: 'Shirt',
-  //     manufacture: 'Infinity',
-  //     productSize: 'S,M,L,XL,XXL',
-  //     productColor: 'Green',
-  //     weight: '500g',
-  //     productImage_1:
-  //       'https://infinitymegamall.com/wp-content/uploads/2023/02/25a.jpg',
-  //     productImage_2:
-  //       'https://infinitymegamall.com/wp-content/uploads/2023/02/41a.jpg',
-  //     productImage_3:
-  //       'https://infinitymegamall.com/wp-content/uploads/2023/01/16a-370x444.jpg',
-  //     id: 1,
-  //   },
-  //   {
-  //     name: 'Casual Shirt 0.2',
-  //     offerPrice: 1200,
-  //     regularPrice: 1000,
-  //     description: 'A good quality product',
-  //     quantity: 1,
-  //     category: 'man',
-  //     subCate: 'Shirt',
-  //     manufacture: 'Infinity',
-  //     productSize: 'S,M,L,XL,XXL',
-  //     productColor: 'Green',
-  //     weight: '500g',
-  //     productImage_1:
-  //       'https://infinitymegamall.com/wp-content/uploads/2022/07/23a.jpg',
-  //     productImage_2:
-  //       'https://infinitymegamall.com/wp-content/uploads/2022/07/23b.jpg',
-  //     productImage_3:
-  //       'https://infinitymegamall.com/wp-content/uploads/2023/01/16a-370x444.jpg',
-  //     id: 2,
-  //   },
-  //   {
-  //     name: 'TANJIM PANJABI',
-  //     offerPrice: 2500,
-  //     regularPrice: 2100,
-  //     description: 'A good quality product',
-  //     quantity: 1,
-  //     category: 'man',
-  //     subCate: 'Punjabi',
-  //     manufacture: 'Ecstasy',
-  //     productSize: 'S,M,L,XL,XXL',
-  //     productColor: 'Orange',
-  //     weight: '500g',
-  //     productImage_1:
-  //       'https://ecstasybd.com/all-images/product/Product-Image-1663824988.jpg',
-  //     productImage_2:
-  //       'https://ecstasybd.com/all-images/product/Product-Image-11663824988.jpg',
-  //     productImage_3:
-  //       'https://ecstasybd.com/all-images/product/Product-Image-21663824988.jpg',
-  //     id: 4,
-  //   },
-  //   {
-  //     name: 'TANJIM PREMIUM PANJABI',
-  //     offerPrice: 3500,
-  //     regularPrice: 3200,
-  //     description: 'A good quality product',
-  //     quantity: 1,
-  //     category: 'man',
-  //     subCate: 'Punjabi',
-  //     manufacture: 'Ecstasy',
-  //     productSize: 'S,M,L,XL,XXL',
-  //     productColor: 'Navi Blue',
-  //     weight: '500g',
-  //     productImage_1:
-  //       'https://ecstasybd.com/all-images/product/Product-Image-1663824560.jpg',
-  //     productImage_2:
-  //       'https://ecstasybd.com/all-images/product/Product-Image-11663824560.jpg',
-  //     productImage_3:
-  //       'https://ecstasybd.com/all-images/product/Product-Image-21663824560.jpg',
-  //     id: 5,
-  //   },
-  // ];
+
+   couponCodeProduct!: any;
+
+  couponCodeApply(id: number, data: NgForm){
+   console.log(id);
+
+   this.service.getById(id).subscribe({
+    next: r=>{
+      this.couponCodeProduct = r;
+      console.log(r);
+      
+     
+    },
+    error(err) {
+      console.log("have some error");
+      
+    },
+   })
+   console.log(this.couponCodeProduct);
+   
+
+  //  if( this.couponCodeProduct.couponCode.length >1){
+
+  //   if(this.couponCodeProduct.couponCode === data.value.coupon){
+  //     alert("Coupon Code Applyed")
+  //   }else{
+  //     alert("Not A Valid Coupon Code")
+  //   }
+
+
+  //  }else{
+  //    alert("The is No coupon For This Product")
+  //  }
+   
+  }
+
   updateQuantity(index: number, d: any, quantity: number) {
     d.productQuantity = quantity;
     this.service.updateCart(d).subscribe({
