@@ -45,18 +45,18 @@ export class ShoptinCartComponent {
    console.log(this.couponCodeProduct);
    
 
-  //  if( this.couponCodeProduct.couponCode.length >1){
+   if( this.couponCodeProduct.couponCode.length >1){
 
-  //   if(this.couponCodeProduct.couponCode === data.value.coupon){
-  //     alert("Coupon Code Applyed")
-  //   }else{
-  //     alert("Not A Valid Coupon Code")
-  //   }
+    if(this.couponCodeProduct.couponCode === data.value.coupon){
+      alert("Coupon Code Applyed")
+    }else{
+      alert("Not A Valid Coupon Code")
+    }
 
 
-  //  }else{
-  //    alert("The is No coupon For This Product")
-  //  }
+   }else{
+     alert("The is No coupon For This Product")
+   }
    
   }
 
