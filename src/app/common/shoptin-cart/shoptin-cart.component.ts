@@ -34,7 +34,19 @@ export class ShoptinCartComponent {
     next: r=>{
       this.couponCodeProduct = r;
       console.log(r);
-      
+      console.log(this.couponCodeProduct);
+      // if( this.couponCodeProduct.couponCode != null){
+
+        if(this.couponCodeProduct.couponCode === data.value.coupon){
+          alert("Coupon Code Applyed")
+        }else{
+          alert("Not A Valid Coupon Code")
+        }
+    
+    
+      //  }else{
+      //    alert("There are is No coupon For This Product")
+      //  }
      
     },
     error(err) {
@@ -42,21 +54,7 @@ export class ShoptinCartComponent {
       
     },
    })
-   console.log(this.couponCodeProduct);
    
-
-   if( this.couponCodeProduct.couponCode.length >1){
-
-    if(this.couponCodeProduct.couponCode === data.value.coupon){
-      alert("Coupon Code Applyed")
-    }else{
-      alert("Not A Valid Coupon Code")
-    }
-
-
-   }else{
-     alert("The is No coupon For This Product")
-   }
    
   }
 
