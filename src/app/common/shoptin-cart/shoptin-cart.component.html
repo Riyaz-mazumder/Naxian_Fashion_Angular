@@ -62,10 +62,10 @@
                     </div>
 
                      <!-- Apply Coupon Code  -->
-                     <form (ngSubmit)="couponCodeApply(products.id, f)" #f="ngForm">
+                     <form (ngSubmit)="couponCodeApply(f, products)" #f="ngForm">
                      <div class="coupon-container">
                       <label for="coupon-code">Enter coupon code:</label>
-                      <input ngModule name="coupon" type="text" id="coupon-code" placeholder="Enter code here">
+                      <input ngModel name="coupon" type="text" id="coupon-code" placeholder="Enter code here">
                       <button type="submit" id="apply-coupon">Apply</button>
                      </div>
                      </form>

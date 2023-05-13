@@ -27,33 +27,65 @@ export class ShoptinCartComponent {
 
    couponCodeProduct!: any;
 
-  couponCodeApply(id: number, data: NgForm){
-   console.log(id);
+  couponCodeApply( data: NgForm, d:any){
 
-   this.service.getById(id).subscribe({
-    next: r=>{
-      this.couponCodeProduct = r;
-      console.log(r);
-      console.log(this.couponCodeProduct);
-      // if( this.couponCodeProduct.couponCode != null){
+    if(d.couponCode === null){
+      alert("This Product does not have any Coupon Code")
+    }else{
+      if(d.couponCode === data.value.coupon){
+        const discountNumber = parseInt(d.couponCode.match(/\d+/)[0]);
+        
+       
+        console.log( d.offerPrice - discountNumber);
+        d.offerPrice - discountNumber;
+        console.log(d);
+       
+        
+        // Not Working
+        this.service.updateCart(d).subscribe({
+          next: (r) => {
+            console.log(r);
+          },
+          error: (e) => {
+            alert(e);
+          },
+        });
+        this.ngOnInit();
+          
+      }else{
+        alert("Not A Valid Coupon Code")
+      }
+    }
 
-        if(this.couponCodeProduct.couponCode === data.value.coupon){
-          alert("Coupon Code Applyed")
-        }else{
-          alert("Not A Valid Coupon Code")
-        }
+
+  //  this.service.getById(id).subscribe({
+  //   next: r=>{
+  //     this.couponCodeProduct = r;
+  //     // console.log(r);
+  //     // console.log(this.couponCodeProduct);
+  //     // if( this.couponCodeProduct.couponCode != null){
+  //       console.log(this.couponCodeProduct.couponCode);
+        
+        
+  // console.log(data.value);
+  
+  //       if(this.couponCodeProduct.couponCode === data.value.coupon){
+  //         alert("Coupon Code Applyed")
+  //       }else{
+  //         alert("Not A Valid Coupon Code")
+  //       }
     
     
-      //  }else{
-      //    alert("There are is No coupon For This Product")
-      //  }
+  //     //  }else{
+  //     //    alert("There are is No coupon For This Product")
+  //     //  }
      
-    },
-    error(err) {
-      console.log("have some error");
+  //   },
+  //   error(err) {
+  //     console.log("have some error");
       
-    },
-   })
+  //   },
+  //  })
    
    
   }

@@ -13,6 +13,11 @@ export class DatabaseServiceService {
   // Products Table
   private url = 'http://localhost:8080/api/v1/products';
 
+
+  searchProducts(data: string){
+    return this.http.get("http://localhost:8080/api/v1/product/" + data)
+  }
+
   addNewProduct(data: any) {
     return this.http.post(this.url, data);
   }

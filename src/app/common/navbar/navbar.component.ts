@@ -6,6 +6,7 @@ import { ShoptinCartComponent } from '../shoptin-cart/shoptin-cart.component';
 import { WishListPageComponent } from '../wish-list-page/wish-list-page.component';
 import { CartServiceService } from 'src/app/service/cart-service.service';
 import { WishListServiceService } from 'src/app/service/wish-list-service.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-navbar',
@@ -20,6 +21,21 @@ export class NavbarComponent implements OnInit {
     private cartService: CartServiceService,
     private wishListService: WishListServiceService
   ) {}
+
+  searchProducts(d:NgForm){
+    console.log(d.value.search);
+    this.service.searchProducts(d.value.search).subscribe({
+      next: r=>{
+        console.log(r);
+        
+      },
+      error(err) {
+        console.log(err);
+        
+      },
+    })
+    
+  }
 
   loggedIn!: any;
   userName!: any;
