@@ -40,7 +40,8 @@
   margin-right: 8px;
 }
 
-.contact-me_grid .contact-me_ifo #map {
+ #map {
+  overflow: hidden;
   margin-top: 40px;
   margin-left: auto;
   margin-right: auto;

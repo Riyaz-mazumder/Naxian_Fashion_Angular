@@ -1,0 +1,38 @@
+<div class="cards" style="margin-top: 100px;">
+   
+    <h2> <span *ngIf="allProducts.length >0">Search Products</span> <span *ngIf="allProducts.length === 0">No Result</span> </h2>
+    <div class="container">
+      <div *ngFor="let v of allProducts">
+        <div class="card-1 card-div" id="{{ v.id }}">
+          <div (click)="shopping('formWishList', v)" class="like-icon-div">
+            <label for="card-1-like" class="like-icon-div-child">
+              <input type="checkbox" id="card-1-like" />
+              <i class="far fa-heart heart-empty"></i>
+              <i class="fas fa-heart heart-fill"></i>
+            </label>
+          </div>
+  
+          <div (click)="productClicked(v.id)" class="gow-img-div img-div">
+            <img src="{{ v.productImage_1 }}" alt="god-of-war-figurine" />
+          </div>
+          <div class="text-container">
+            <h2 class="item-name">{{ v.name }}</h2>
+            <!-- <p class="date">{{v.di}}</p> -->
+            <div class="pricing-and-cart">
+              <div class="pricing">
+                <p class="previous-price">{{ v.regularPrice }}</p>
+                <p class="current-price">{{ v.offerPrice }}</p>
+              </div>
+              <div (click)="shopping('formCard', v)" >
+                <i class="fas fa-shopping-cart"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Pagination -->
+    <h3 style="margin: 1em 4em;"> <a routerLink="/home" > <-- Go Back To Home Page </a></h3>
+    
+  </div>

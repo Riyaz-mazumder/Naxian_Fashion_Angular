@@ -8,6 +8,7 @@ import { CartServiceService } from 'src/app/service/cart-service.service';
 import { WishListServiceService } from 'src/app/service/wish-list-service.service';
 import { NgForm } from '@angular/forms';
 import { SearchSearviceService } from 'src/app/service/search-searvice.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -21,22 +22,14 @@ export class NavbarComponent implements OnInit {
     private dialog: MatDialog,
     private cartService: CartServiceService,
     private wishListService: WishListServiceService,
-    private searchService: SearchSearviceService
+    private searchService: SearchSearviceService,
+    private router: Router
   ) {}
 
   searchedProducts!:any;
   searchProducts(d:NgForm){
     console.log(d.value.search);
-    this.service.searchProducts(d.value.search).subscribe({
-      next: r=>{
-        console.log(r);
-        // this.searchService.updateAllProductsArray(r);
-      },
-      error(err) {
-        console.log(err);
-        
-      },
-    })
+    this.router.navigate(['/search/' + d.value.search]);
     
   }
 
@@ -100,5 +93,13 @@ export class NavbarComponent implements OnInit {
     const dialogRef = this.dialog.open(WishListPageComponent, {
       data: d,
     });
+  }
+
+  goToUrPropile(){
+    console.log(this.authService.getUser());
+    console.log(JSON.parse(this.loggedIn));
+    
+    
+    this.router.navigate(["/userPropile/" + JSON.parse(this.loggedIn).name])
   }
 }

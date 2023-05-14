@@ -1,0 +1,482 @@
+// Filter start
+@keyframes slidy {
+    0% {
+      left: 0%;
+    }
+    20% {
+      left: 0%;
+    }
+    25% {
+      left: -100%;
+    }
+    45% {
+      left: -100%;
+    }
+    50% {
+      left: -200%;
+    }
+    70% {
+      left: -200%;
+    }
+    75% {
+      left: -300%;
+    }
+    95% {
+      left: -300%;
+    }
+    100% {
+      left: -400%;
+    }
+  }
+  
+  body {
+    margin: 0;
+  }
+  div#slider {
+    overflow: hidden;
+  }
+  div#slider figure img {
+    width: 20%;
+    float: left;
+  }
+  div#slider figure {
+    position: relative;
+    width: 500%;
+    margin: 0;
+    left: 0;
+    text-align: left;
+    font-size: 0;
+    animation: 30s slidy infinite;
+  }
+  //  Filater end
+  
+  // navigation start
+  .categories {
+    margin-left: 2em;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .category {
+    position: relative;
+    margin: 10px;
+  }
+  
+  .category a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #333;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  .category:hover a {
+    background-color: #fff;
+    color: #333;
+  }
+  
+  .subcategories {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #333;
+    border-radius: 5px;
+    z-index: 10000;
+    margin-bottom: 10px;
+  }
+  
+  .category:hover .subcategories {
+    display: block;
+    animation: fadeInDown 0.3s;
+    background-color: #fff;
+  }
+  
+  .subcategories a {
+    display: block;
+    padding: 5px 0;
+    color: #333;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .subcategories a:hover {
+    color: #fff;
+    background-color: #333;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .categories {
+      flex-direction: column;
+    }
+    .category {
+      margin: 10px 0;
+    }
+    .subcategories {
+      position: static;
+      display: none;
+    }
+    .category:hover .subcategories {
+      display: block;
+      animation: none;
+      background-color: #fff;
+    }
+  }
+  
+  @keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  // navigation end
+  
+  .fa-shopping-cart {
+    cursor: pointer;
+  }
+  fa-shopping-cart:hover {
+    transform: rotate(360deg);
+  }
+  img:hover {
+    cursor: pointer;
+  }
+  
+  * {
+    padding: 0;
+    margin: 0;
+  }
+  :root {
+    font-size: 16px;
+    font-family: "Raleway";
+    --heading-color: hsl(0, 0%, 7%);
+    --date-text-color: hsl(0, 0%, 51%);
+    --previous-price-text-color: hsl(0, 98%, 44%);
+    --current-price-text-color: hsla(0, 0%, 0%, 0.822);
+    --liked-heart-icon-color: hsl(0, 98%, 44%);
+    --heart-icon-color: whitesmoke;
+    --pricing-font-weight: 800;
+    --title-font-weight: 800;
+    --date-font-weight: 550;
+  
+    /* Cards colors */
+    --card-main-color: whitesmoke;
+    --card-1-secondary-color: rgb(192, 82, 82);
+    --card-2-secondary-color: rgb(67, 53, 27);
+    --card-3-secondary-color: rgb(178, 180, 179);
+    --card-4-secondary-color: rgb(96, 109, 117);
+  }
+  
+  html {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .container input {
+    display: none;
+  }
+  .cards h2 {
+    margin: 1em 1em 1em 2em;
+  }
+  .container {
+    max-width: 100em;
+    /* background-color: lightgreen; */
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-content: flex-start;
+    margin: auto;
+    min-height: 30em;
+    padding: 0.5em 0em 0em 0em;
+    box-sizing: border-box;
+  }
+  
+  /* Card Styling */
+  .card-div {
+    width: 20em;
+    min-height: 20em;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    background-color: var(--card-main-color);
+    margin: 0.6em;
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  /* ======== General styling of all cards and heart divs ========== */
+  .img-div {
+    width: 100%;
+    height: 8em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
+    z-index: 1;
+    border-radius: 0 0 10px 10px;
+  }
+  
+  .img-div img {
+    transform-origin: bottom;
+    transform: translateY(7.5%);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* === Styling the like Icon ==== */
+  .like-icon-div {
+    padding: 1em 1em 0 1em;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: right;
+    font-size: 1.5em;
+    color: var(--heart-icon-color);
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .like-icon-div-child {
+    /* background-color: yellow; */
+    width: 1em;
+    height: 1em;
+    position: relative;
+    z-index: 3;
+    cursor: pointer;
+  }
+  
+  .heart-empty {
+    position: absolute;
+    left: 0;
+    opacity: 1;
+  }
+  
+  .heart-fill {
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    transform: scale(0);
+    transition: transform 0.25s ease-in-out, opacity 0.2s ease-in-out;
+  }
+  
+  /* God of war image and heart-background*/
+  .gow-img-div {
+    background-color: var(--card-1-secondary-color);
+  }
+  
+  .gow-img-div img {
+    width: 65%;
+    transform: translateY(7.5%);
+    /* background-color: whitesmoke; */
+  }
+  
+  .card-1 .like-icon-div {
+    background-color: var(--card-1-secondary-color);
+  }
+  
+  /* Sekiro image and heart-background */
+  .sekiro-img-div {
+    background-color: var(--card-2-secondary-color);
+  }
+  
+  .sekiro-img-div img {
+    width: 45%;
+    transform: translateY(7.5%);
+  }
+  
+  .card-2 .like-icon-div {
+    background-color: var(--card-2-secondary-color);
+  }
+  
+  /* Dazai image and heart-background */
+  .dazai-img-div {
+    background-color: var(--card-3-secondary-color);
+  }
+  
+  .dazai-img-div img {
+    width: 80%;
+    transform: translateY(7.5%);
+  }
+  
+  .card-3 .like-icon-div {
+    background-color: var(--card-3-secondary-color);
+  }
+  
+  /* U4 image and heart-background*/
+  .u4-img-div {
+    background-color: var(--card-4-secondary-color);
+  }
+  
+  .u4-img-div img {
+    width: 50%;
+    transform: translateY(7.5%);
+  }
+  
+  .card-4 .like-icon-div {
+    background-color: var(--card-4-secondary-color);
+  }
+  
+  /* ======== text Container Styling general ======== */
+  
+  .text-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* background-color: yellow; */
+    padding: 0 1.5em;
+    padding-top: 7em;
+    padding-bottom: 1em;
+    box-sizing: border-box;
+  }
+  
+  .text-container .item-name,
+  .text-container .date {
+    margin: 0.25em 0;
+    text-align: center;
+  }
+  
+  .text-container .item-name {
+    font-size: 1.2em;
+    font-weight: var(--title-font-weight);
+    color: var(--heading-color);
+  }
+  
+  .text-container .date {
+    font-size: 0.9em;
+    font-weight: var(--date-font-weight);
+    color: var(--date-text-color);
+  }
+  
+  /* === Pricing and cart div  ===== */
+  .pricing-and-cart {
+    /* background-color: wheat; */
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0.25em 0 1em 0;
+  }
+  
+  .pricing {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+  
+  .previous-price {
+    font-size: 0.8rem;
+    font-weight: var(--pricing-font-weight);
+    color: var(--previous-price-text-color);
+    text-decoration: line-through;
+    /* background-color: whitesmoke; */
+    text-align: left;
+  }
+  
+  .current-price {
+    color: var(--current-price-text-color);
+    font-size: 1.3rem;
+    font-weight: var(--pricing-font-weight);
+    /* background-color: yellow; */
+    margin: 0;
+  }
+  
+  .pricing-and-cart {
+    width: 100%;
+  }
+  
+  .fa-shopping-cart {
+    font-size: 1.3rem;
+    top: 0;
+    transform: translateY(50%);
+  }
+  
+  /* ====== Hover effects ======= */
+  .card-div:hover .img-div img {
+    transform: translateY(7.5%) scale(1.2);
+  }
+  
+  .card-div:hover {
+    transform: translate(0, -10px);
+  }
+  
+  .like-icon-div-child:hover .heart-fill {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  .like-icon-div-child:hover .heart-empty {
+    transition-delay: 0.25s;
+    opacity: 0;
+  }
+  
+  // #card-1-like:checked ~ .heart-empty,
+  // #card-2-like:checked ~ .heart-empty,
+  // #card-3-like:checked ~ .heart-empty,
+  // #card-4-like:checked ~ .heart-empty{
+  //       opacity: 0;
+  // }
+  
+  // #card-1-like:checked ~ .heart-fill,
+  // #card-2-like:checked ~ .heart-fill,
+  // #card-3-like:checked ~ .heart-fill,
+  // #card-4-like:checked ~ .heart-fill{
+  //   animation: like-animation 0.25s ease-in-out forwards;
+  // }
+  
+  // #card-1-like:not(:checked) ~ .heart-fill,
+  // #card-2-like:not(:checked) ~ .heart-fill,
+  // #card-3-like:not(:checked) ~ .heart-fill,
+  // #card-4-like:not(:checked) ~ .heart-fill{
+  //   animation: unlike-animation 0.25s ease-in-out ;
+  // }
+  
+  @keyframes like-animation {
+    0% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  
+    50% {
+      opacity: 1;
+      color: var(--liked-heart-icon-color);
+      transform: scale(0.5);
+    }
+  
+    100% {
+      opacity: 1;
+      color: var(--liked-heart-icon-color);
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes unlike-animation {
+    0% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  
+    50% {
+      opacity: 1;
+      transform: scale(0.5);
+    }
+  
+    100% {
+      opacity: 1;
+      color: var(--heart-icon-color);
+      transform: scale(1);
+    }
+  }
+  

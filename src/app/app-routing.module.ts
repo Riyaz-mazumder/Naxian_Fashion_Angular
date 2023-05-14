@@ -16,6 +16,8 @@ import { HomePageMainComponent } from './admin/Pages/home-page-main/home-page-ma
 import { AproveOrderComponent } from './admin/Tables/order/aprove-order/aprove-order.component';
 import { AllUserComponent } from './admin/Tables/users/all-user/all-user.component';
 import { ShowOrderComponent } from './admin/Tables/order/show-order/show-order.component';
+import { AllProductBySearchedComponent } from './Pages/all-product-by-searched/all-product-by-searched.component';
+import { UserDetailsComponent } from './Pages/user-details/user-details.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -25,6 +27,9 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'productView/:id', component: ProductViewPageComponent },
   { path: 'user/:id/shopingView', component: ShoptinCartComponent },
+  { path: 'search/:word', component: AllProductBySearchedComponent},
+
+  { path: 'userPropile/:id', component: UserDetailsComponent},
 
   { path: 'admin', component: AdminLoginComponent },
   {

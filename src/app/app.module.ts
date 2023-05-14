@@ -28,6 +28,8 @@ import { CheckOutPageComponent } from './common/check-out-page/check-out-page.co
 import { ShowOrderComponent } from './admin/Tables/order/show-order/show-order.component';
 import { AproveOrderComponent } from './admin/Tables/order/aprove-order/aprove-order.component';
 import { AllUserComponent } from './admin/Tables/users/all-user/all-user.component';
+import { AllProductBySearchedComponent } from './Pages/all-product-by-searched/all-product-by-searched.component';
+import { UserDetailsComponent } from './Pages/user-details/user-details.component';
 
 
 
@@ -54,6 +56,8 @@ import { AllUserComponent } from './admin/Tables/users/all-user/all-user.compone
     ShowOrderComponent,
     AproveOrderComponent,
     AllUserComponent,
+    AllProductBySearchedComponent,
+    UserDetailsComponent,
   
   ],
   imports: [
