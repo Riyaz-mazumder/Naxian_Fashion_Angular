@@ -37,11 +37,12 @@ export class ShoptinCartComponent {
         
        
         console.log( d.offerPrice - discountNumber);
-        d.offerPrice - discountNumber;
+        const ff=  d.offerPrice - discountNumber;
+        d.offerPrice = ff;
+
         console.log(d);
        
         
-        // Not Working
         this.service.updateCart(d).subscribe({
           next: (r) => {
             console.log(r);
@@ -56,37 +57,6 @@ export class ShoptinCartComponent {
         alert("Not A Valid Coupon Code")
       }
     }
-
-
-  //  this.service.getById(id).subscribe({
-  //   next: r=>{
-  //     this.couponCodeProduct = r;
-  //     // console.log(r);
-  //     // console.log(this.couponCodeProduct);
-  //     // if( this.couponCodeProduct.couponCode != null){
-  //       console.log(this.couponCodeProduct.couponCode);
-        
-        
-  // console.log(data.value);
-  
-  //       if(this.couponCodeProduct.couponCode === data.value.coupon){
-  //         alert("Coupon Code Applyed")
-  //       }else{
-  //         alert("Not A Valid Coupon Code")
-  //       }
-    
-    
-  //     //  }else{
-  //     //    alert("There are is No coupon For This Product")
-  //     //  }
-     
-  //   },
-  //   error(err) {
-  //     console.log("have some error");
-      
-  //   },
-  //  })
-   
    
   }
 

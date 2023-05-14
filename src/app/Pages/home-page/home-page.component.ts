@@ -22,7 +22,10 @@ export class HomePageComponent implements OnInit {
     private http: HttpClient
   ) {}
 
+  // This One
   allProducts!: any;
+
+
   loggedIn!: any;
   theUser!: any;
 

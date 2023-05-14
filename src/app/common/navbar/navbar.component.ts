@@ -7,6 +7,7 @@ import { WishListPageComponent } from '../wish-list-page/wish-list-page.componen
 import { CartServiceService } from 'src/app/service/cart-service.service';
 import { WishListServiceService } from 'src/app/service/wish-list-service.service';
 import { NgForm } from '@angular/forms';
+import { SearchSearviceService } from 'src/app/service/search-searvice.service';
 
 @Component({
   selector: 'app-navbar',
@@ -19,15 +20,17 @@ export class NavbarComponent implements OnInit {
     private service: DatabaseServiceService,
     private dialog: MatDialog,
     private cartService: CartServiceService,
-    private wishListService: WishListServiceService
+    private wishListService: WishListServiceService,
+    private searchService: SearchSearviceService
   ) {}
 
+  searchedProducts!:any;
   searchProducts(d:NgForm){
     console.log(d.value.search);
     this.service.searchProducts(d.value.search).subscribe({
       next: r=>{
         console.log(r);
-        
+        // this.searchService.updateAllProductsArray(r);
       },
       error(err) {
         console.log(err);
