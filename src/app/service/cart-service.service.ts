@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 export class CartServiceService {
   constructor(private http: HttpClient) {}
 
-  private urlOfCart = 'http://localhost:8080/api/v1/cart';
+  private urlOfCart = 'https://juicy-camera-production.up.railway.app/api/v1/cart';
 
   public getAllFromCart() {
     return this.http.get(this.urlOfCart);

@@ -11,11 +11,11 @@ export class DatabaseServiceService {
     'https://naxianfashion-931b6-default-rtdb.asia-southeast1.firebasedatabase.app/Products.json';
 
   // Products Table
-  private url = 'http://localhost:8080/api/v1/products';
+  private url = 'https://juicy-camera-production.up.railway.app/api/v1/products';
 
 
   searchProducts(data: string){
-    return this.http.get("http://localhost:8080/api/v1/product/" + data)
+    return this.http.get("https://juicy-camera-production.up.railway.app/api/v1/product" + data)
   }
 
   addNewProduct(data: any) {
@@ -63,7 +63,7 @@ export class DatabaseServiceService {
   }
 
   // Orders
-  oUrl = 'http://localhost:8080/api/v1/orders';
+  oUrl = 'https://juicy-camera-production.up.railway.app/api/v1/orders';
   addOrder(data: any) {
     return this.http.post(this.oUrl, data);
   }
