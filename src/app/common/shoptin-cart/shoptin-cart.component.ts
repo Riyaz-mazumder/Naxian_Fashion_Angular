@@ -126,9 +126,5 @@ export class ShoptinCartComponent {
     const dialogRefs = this.dialog.open(CheckOutPageComponent, {
       data: this.Products,
     });
-
-    // dialogRefs.afterClosed().subscribe((result) => {
-    //   console.log(`Dialog result: ${result}`);
-    // });
   }
 }
